@@ -11,8 +11,10 @@ from passlib.hash import sha256_crypt
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/lab5'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 's14a-key'
+#app.secret_key = environ.get('SECRET_KEY')
 Db.init_app(app)
 migrate = Migrate(app, Db)
 
