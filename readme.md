@@ -36,3 +36,4 @@ Welcome! This week we will be working with user logins and sessions.
             - https://seositecheckup.com/
             - https://www.woorank.com/
         + If you CANNOT deploy your app to Heroku, check the performance and identify bottlenecks using Developer Tools (Chrome, Firefox, or Safari). Profile your app using the cProfile (check the following tutorial): https://julien.danjou.info/guide-to-python-profiling-cprofile-concrete-case-carbonara/).# s14lab5
+
