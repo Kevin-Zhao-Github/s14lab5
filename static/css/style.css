@@ -13,16 +13,18 @@ html {
 body {
     height: 100%;
     background-color: lightblue;
-    background-image: linear-gradient(135deg, peachpuff, lightblue, lightseagreen);
+    background-image: linear-gradient(135deg, moccasin, lightblue, lightseagreen);
 }
 
 h1 {
-    border-bottom: 3px solid navy;
+    background: linear-gradient(to left, lemonchiffon, #cfffe5);
+    color: black;
+    border: 3px solid aliceblue;
     display: inline-flex;
     font-family: sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: lighter;
-    margin: 10px;
+    margin: 30px 0px 0px 20px;
     padding: 0;
 }
 
@@ -31,9 +33,10 @@ h1 {
 }
 
 p {
+    color: peru;
     font-family: sans-serif;
-    font-size: 15px;
-    font-weight: lighter;
+    font-size: 18px;
+    font-weight: bolder;
     margin: 5px 20px;
 }
 
@@ -48,9 +51,10 @@ form {
 button {
     background-color: royalblue;
     border-radius: 5px;
-    color: white;
+    color: palegoldenrod;
     font-family: sans-serif;
     font-size: 12px;
+    font-weight: bolder;
     padding: 3px;
     min-width: 100px;
 }
@@ -72,7 +76,7 @@ button {
 }
 
 .form-group textarea {
-    border: 3px solid darkblue;
+    border: 3px solid royalblue;
     margin: 10px 0 0 1px;
     padding: 3px;
 }
@@ -80,9 +84,10 @@ button {
 .form-submit {
     background-color: royalblue;
     border-radius: 5px;
-    color: white;
+    color: palegoldenrod;
     font-family: sans-serif;
     font-size: 12px;
+    font-weight: bolder;
     margin: 11px;
     padding: 3px;
     width: 100px;

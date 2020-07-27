@@ -1,4 +1,4 @@
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 from flask import Flask, flash, render_template, request, url_for, redirect, jsonify, session
 from flask_migrate import Migrate
 from models.models import Db, User, Post
@@ -7,14 +7,14 @@ from os import environ
 from datetime import datetime
 from passlib.hash import sha256_crypt
 
-#load_dotenv('.env')
+load_dotenv('.env')
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/lab5'
+#app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/lab5'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.secret_key = 's14a-key'
-#app.secret_key = environ.get('SECRET_KEY')
+#app.secret_key = 's14a-key'
+app.secret_key = environ.get('SECRET_KEY')
 Db.init_app(app)
 migrate = Migrate(app, Db)
 

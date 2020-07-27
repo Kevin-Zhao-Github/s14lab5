@@ -15,14 +15,14 @@
 
     {% else %}
 
-        <h1>Hi, guest!</h1>
+        <h1>Hi, guest! Please login to make posts.</h1>
 
     {% endif %}
 
 
     <div id="posts">
         {% for p in posts %}
-            <p> {{ p.created_date.strftime("%m/%d/%Y, %H:%M") }}: Author {{ p.author_name.username }}: {{ p.content }}</p>
+            <p> {{ p.created_date.strftime("%m/%d/%Y, %H:%M") }} - Author {{ p.author_name.username }}: {{ p.content }}</p>
         {% endfor %}
     </div>
 
