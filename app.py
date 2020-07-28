@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
-from flask import Flask, flash, render_template, request, url_for, redirect, jsonify, session
+from flask import Flask, flash, render_template, request, url_for, redirect, jsonify, session, send_from_directory
+#from flask_sitemap import Sitemap
 from flask_migrate import Migrate
 from models.models import Db, User, Post
 from forms.forms import SignupForm, LoginForm, NewpostForm
@@ -9,7 +10,7 @@ from passlib.hash import sha256_crypt
 
 load_dotenv('.env')
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/lab5'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -17,6 +18,17 @@ app.secret_key = 's14a-key'
 #app.secret_key = environ.get('SECRET_KEY')
 Db.init_app(app)
 migrate = Migrate(app, Db)
+#ext = Sitemap(app=app)
+
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
+
+#@ext.register_generator
+#def index():
+#    yield 'index', {}
+
 
 # GET /
 @app.route('/')
